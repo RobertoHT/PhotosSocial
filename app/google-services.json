@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "566318482009",
+    "firebase_url": "https://photos-social.firebaseio.com",
+    "project_id": "photos-social",
+    "storage_bucket": "photos-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566318482009:android:5eb8354abf833c54",
+        "android_client_info": {
+          "package_name": "com.professional.micromaster.photossocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566318482009-v426qd9me8h86dj8s797tconr88nckev.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.professional.micromaster.photossocial",
+            "certificate_hash": "19c8e47b37571b9fa2bcf65cdf76b5eaf6331d2f"
+          }
+        },
+        {
+          "client_id": "566318482009-4k1n9bi74t4kut8mt8on268uif3n3kdv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX7gPoZvXa40v4hhSZ91Hq4J5VBeVtMQU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566318482009-4k1n9bi74t4kut8mt8on268uif3n3kdv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
