@@ -7,5 +7,5 @@ package com.professional.micromaster.photossocial.main.ui;
 public interface MainView {
     void onUploadInit();
     void onUploadComplete();
-    void onUploadError();
+    void onUploadError(String error);
 }
