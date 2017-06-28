@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.professional.micromaster.photossocial">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".PhotoSocialApp"
@@ -17,7 +17,8 @@
             android:value="@string/GOOGLE_MAPS_API_KEY" />
         <meta-data
             android:name="CLOUDINARY_URL"
-            android:value="@string/CLOUDINARY_URL"/>
+            android:value="@string/CLOUDINARY_URL" />
+
         <activity
             android:name=".login.ui.LoginActivity"
             android:noHistory="true">
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
