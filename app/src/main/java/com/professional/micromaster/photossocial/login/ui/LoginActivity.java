@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.professional.micromaster.photossocial.MainActivity;
+import com.professional.micromaster.photossocial.main.ui.MainActivity;
 import com.professional.micromaster.photossocial.PhotoSocialApp;
 import com.professional.micromaster.photossocial.R;
 import com.professional.micromaster.photossocial.login.LoginPresenter;

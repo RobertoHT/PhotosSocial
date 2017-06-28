@@ -7,4 +7,7 @@
     <string name="login.notice.message.useradded">User was successfully registered</string>
     <string name="login.error.message.signin">Error trying to singIn %s</string>
     <string name="login.error.message.signup">Error registering new user %s</string>
+
+    <string name="main.title.list">Photos</string>
+    <string name="main.title.map">Map</string>
 </resources>
