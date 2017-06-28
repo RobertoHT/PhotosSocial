@@ -37,9 +37,9 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     RelativeLayout layoutMainContainer;
 
     @Inject
-    private LoginPresenter presenter;
+    LoginPresenter presenter;
     @Inject
-    private SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences;
     private PhotoSocialApp app;
 
     @Override
@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
     }
 
     private void setupInjection() {
+        app.getLoginComponent(this).inject(this);
     }
 
     @Override

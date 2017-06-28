@@ -12,5 +12,5 @@ import dagger.Component;
 
 @Singleton
 @Component(modules = {LibsModule.class, PhotoSocialAppModule.class})
-public class LibsComponent {
+public interface LibsComponent {
 }
