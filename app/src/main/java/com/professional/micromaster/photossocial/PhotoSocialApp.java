@@ -20,6 +20,10 @@ import com.professional.micromaster.photossocial.photolist.di.PhotoListComponent
 import com.professional.micromaster.photossocial.photolist.di.PhotoListModule;
 import com.professional.micromaster.photossocial.photolist.ui.PhotoListView;
 import com.professional.micromaster.photossocial.photolist.ui.adapter.OnItemClickListener;
+import com.professional.micromaster.photossocial.photomap.di.DaggerPhotoMapComponent;
+import com.professional.micromaster.photossocial.photomap.di.PhotoMapComponent;
+import com.professional.micromaster.photossocial.photomap.di.PhotoMapModule;
+import com.professional.micromaster.photossocial.photomap.ui.PhotoMapView;
 
 /**
  * Created by Roberto on 28/06/17.
@@ -81,6 +85,18 @@ public class PhotoSocialApp extends Application {
                 .domainModule(domainModule)
                 .libsModule(libsModule)
                 .photoListModule(new PhotoListModule(view, onItemClickListener))
+                .build();
+    }
+
+    public PhotoMapComponent getPhotoMapComponent(Fragment fragment, PhotoMapView view) {
+        libsModule.setFragment(fragment);
+
+        return DaggerPhotoMapComponent
+                .builder()
+                .photoSocialAppModule(photoSocialAppModule)
+                .domainModule(domainModule)
+                .libsModule(libsModule)
+                .photoMapModule(new PhotoMapModule(view))
                 .build();
     }
 }

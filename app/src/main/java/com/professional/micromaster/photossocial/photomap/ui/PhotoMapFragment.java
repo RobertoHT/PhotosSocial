@@ -19,7 +19,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -27,6 +26,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.professional.micromaster.photossocial.PhotoSocialApp;
 import com.professional.micromaster.photossocial.R;
 import com.professional.micromaster.photossocial.domain.Util;
 import com.professional.micromaster.photossocial.entities.Photo;
@@ -37,6 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -54,8 +56,11 @@ public class PhotoMapFragment extends Fragment implements PhotoMapView, OnMapRea
     private HashMap<Marker, Photo> markers;
     private List<Photo> photoList;
 
+    @Inject
     Util utils;
+    @Inject
     ImageLoader imageLoader;
+    @Inject
     PhotoMapPresenter presenter;
 
     @Override
@@ -92,7 +97,10 @@ public class PhotoMapFragment extends Fragment implements PhotoMapView, OnMapRea
         super.onDestroy();
     }
 
-    private void setupInjection() {}
+    private void setupInjection() {
+        PhotoSocialApp app = (PhotoSocialApp) getActivity().getApplication();
+        app.getPhotoMapComponent(this, this).inject(this);
+    }
 
     @Override
     public void addPhoto(Photo photo) {
@@ -176,11 +184,5 @@ public class PhotoMapFragment extends Fragment implements PhotoMapView, OnMapRea
         imageLoader.load(imgMain, photo.getUrl());
         imageLoader.load(imgAvatar, utils.getAvatarUrl(userEmail));
         txtUser.setText(photo.getEmail());
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }
