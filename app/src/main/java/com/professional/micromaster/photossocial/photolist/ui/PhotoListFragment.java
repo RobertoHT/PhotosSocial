@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
+import com.professional.micromaster.photossocial.PhotoSocialApp;
 import com.professional.micromaster.photossocial.R;
 import com.professional.micromaster.photossocial.entities.Photo;
 import com.professional.micromaster.photossocial.photolist.PhotoListPresenter;
@@ -26,6 +27,8 @@ import com.professional.micromaster.photossocial.photolist.ui.adapter.OnItemClic
 import com.professional.micromaster.photossocial.photolist.ui.adapter.PhotoListAdapter;
 
 import java.io.ByteArrayOutputStream;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -41,7 +44,9 @@ public class PhotoListFragment extends Fragment implements PhotoListView, OnItem
     @Bind(R.id.container)
     RelativeLayout container;
 
+    @Inject
     PhotoListAdapter adapter;
+    @Inject
     PhotoListPresenter presenter;
 
     @Override
@@ -67,7 +72,10 @@ public class PhotoListFragment extends Fragment implements PhotoListView, OnItem
         super.onDestroy();
     }
 
-    private void setupInjection() {}
+    private void setupInjection() {
+        PhotoSocialApp app = (PhotoSocialApp) getActivity().getApplication();
+        app.getPhotoListComponent(this, this, this).inject(this);
+    }
 
     private void setupRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
