@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements MainView, GoogleA
         setupNavigation();
         setupGoogleAPIClient();
 
-        presenter.onDestroy();
+        presenter.onCreate();
     }
 
     private void setupInjection() {
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements MainView, GoogleA
     }
 
     private void setupGoogleAPIClient() {
-        if (googleApiClient != null) {
+        if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
