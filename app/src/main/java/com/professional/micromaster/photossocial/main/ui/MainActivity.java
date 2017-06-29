@@ -17,6 +17,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,8 @@ import com.professional.micromaster.photossocial.R;
 import com.professional.micromaster.photossocial.login.ui.LoginActivity;
 import com.professional.micromaster.photossocial.main.MainPresenter;
 import com.professional.micromaster.photossocial.main.ui.adapter.MainSectionsPagerAdapter;
+import com.professional.micromaster.photossocial.photolist.PhotoListFragment;
+import com.professional.micromaster.photossocial.photomap.PhotoMapFragment;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -88,6 +91,11 @@ public class MainActivity extends AppCompatActivity implements MainView, GoogleA
     }
 
     private void setupInjection() {
+        String[] titles = new String[]{getString(R.string.main_title_list),getString(R.string.main_title_map)};
+        Fragment[] fragments = new Fragment[]{new PhotoListFragment(), new PhotoMapFragment()};
+
+        PhotoSocialApp app = (PhotoSocialApp) getApplication();
+        app.getMainComponent(this, getSupportFragmentManager(), fragments, titles).inject(this);
     }
 
     private void setupNavigation() {
