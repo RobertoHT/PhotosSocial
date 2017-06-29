@@ -1,4 +1,4 @@
-package com.professional.micromaster.photossocial.photolist;
+package com.professional.micromaster.photossocial.photolist.ui;
 
 
 import android.os.Bundle;
