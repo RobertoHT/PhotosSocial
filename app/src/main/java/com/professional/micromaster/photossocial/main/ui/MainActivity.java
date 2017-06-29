@@ -35,7 +35,7 @@ import com.professional.micromaster.photossocial.login.ui.LoginActivity;
 import com.professional.micromaster.photossocial.main.MainPresenter;
 import com.professional.micromaster.photossocial.main.ui.adapter.MainSectionsPagerAdapter;
 import com.professional.micromaster.photossocial.photolist.ui.PhotoListFragment;
-import com.professional.micromaster.photossocial.photomap.PhotoMapFragment;
+import com.professional.micromaster.photossocial.photomap.ui.PhotoMapFragment;
 
 import java.io.File;
 import java.io.FileOutputStream;

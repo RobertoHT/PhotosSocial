@@ -1,4 +1,4 @@
-package com.professional.micromaster.photossocial.photomap;
+package com.professional.micromaster.photossocial.photomap.ui;
 
 
 import android.os.Bundle;
